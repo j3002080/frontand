@@ -1,0 +1,130 @@
+Git, GitHub 사용하기
+
+Git 이란?
+버전관리 시스템의 한 종류
+
+버전관리란 : 여러 파일을 하나의 버전으로 묶어 관리하는 것.
+
+버전관리 시스템의 종류
+1. 클라이언트 -서버 모델
+    하나의 중앙 서버로 여러 클라이언트들이 각자 필요한 데=이터만 가져와서 작업을 하고, 다시 중앙 서버로 보내어 통합하는 방식(csv, subversion=svn)
+
+2. 분산 모델
+    하나의 중앙 서버가 존재하지만 여러 클아이언트들은 각자의 컴퓨터 저장소에 전체 사본을 가지고 작업하는 방식(Git)
+
+Git의 장점
+    - 동시에 박업하는 사람들과 소스코드를 주고 받을 필요가 없음
+    - 같은 파일을 여러명이 동시에 병렬 개발이 가능
+    - 변동 과정을 체계적으로 관리할 수 있고, 언제든지 지난 시점의 버전으로 되돌릴 수 있음
+    - 인터넷이 연결되지 않은 곳에서도 개발을 진행할 수 있으며, 중앙 서버의
+    데이터가 유실 되어도 다시 복구할 수 있음
+
+cmder 설치
+https://cmder.net
+
+Git 설치
+https://git-scm.com/downloads
+1. cmd에서 git을 입력하고 설치되어 있는지 확인
+    *설치되지 않은 경우
+        *'git'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+        배치 파일이 아닙니다.
+2. 구글에서 "깃 설치"로 검색후 "Git설치-Git"를 선택
+3. 왼쪽 메뉴에서 Dowmlond를 클릭 하고 windows를 선택 다운로드
+4. 기본설정을 우지하고 설치를 완료
+
+GitHub란
+    - Git으로 버전관리한 코드를 올릴 수 있는 클라우드 서버
+    - 단순한 저장만 하는 것이 아니라 다른 유저들과 함께 코드를 공유 하고 온라인으로 하나의 프로그램을 같이 제작할 수 있게 만듬
+
+GitHub가입 
+https://github.com/
+ 3002080@naver.com /k**12**00*
+
+
+5. 로컬 저장소 생성하기
+
+컨트롤 +L :화면 클리어
+pwd:현재 디록토리 경로를 표ㅕ시
+ls :현재 디렉토리에 디렉토리와 파일을 표시
+cd : 다른디렉토리로 이동
+        cd.. /상위 디렉토리로 이동
+        cd 디렉토리 이름/ 해당 디렉토리로 이동
+
+git init명령어로 로컬 저장소를 
+
+*폴더가 안보일 때
+ls-al
+
+6. 원하는 파일 생성하기
+README.md, index.html, style.css 파일을 생성
+
+7. 버전관리 파일을 선택하기
+git add RADME.md (명령어 / 파일명)
+
+8. 버전관리 파일 커밋하기
+git commit -m "README.md를 추가했어요"
+
+    *아래 에러가 발생하는 경우
+    Author identity unknown
+    *** Please tell me who you are.
+    Run
+    git config --global user.email "you@example.com"
+    git config --global user.name "Your Name"
+    to set your account's default identity.
+    Omit --global to set the identity only in this repository.
+    fatal: unable to auto-detect email address (got 'rh732@DESKTOP-5EMGUJF.(none)')
+
+    *해결방법*
+    git config --global user.email "3002080@naver.com"
+    git config --gldbal user.name "정 은교"
+
+    *다시 git commit -m "README.md를 추가했어요" 실행
+
+9. 로그 확인하기
+git log
+
+
+10. 여러 파일을 선택하기
+git add .
+
+11. 여러 파일 커밋하기
+git commit -m "모든 파일 추가"
+
+12. 로그 확인하기
+git log
+
+13. 로컬 저장소에 github 저장소 주소 설정하기
+git remote add origin https://github.com/ryuzy/frontend.git
+
+14. 만든 커밋을 github에 푸시하기
+git push -u origin master
+
+
+원격 저장소(github)의 자료를 내 컴퓨터에 받아오기
+
+1. 디렉토리 이동
+cd C:\Ryuzy\Clone
+
+2. 원격 저장소에서 자료를 복사해서 가져오기
+git clone https://github.com/ryuzy/frontend.git (폴더 생성)
+git clone https://github.com/ryuzy/frontend.git . (파일만 생성)
+
+3. 폴더 및 파일을 삭제
+rm -rf Clone
+
+4. README.md와 index.html 파일을 수정
+
+5. git add .
+
+6. git commit -m "README.md, index.html 파일 수정"
+
+7. git push -u origin master
+
+
+다른 사람들과 협업하기
+
+repository 선택 -> setting -> manage access -> 비밀번호 입력 -> invite a collaborators 버튼을 클릭 -> 상대방 이메일 또는 이름을 등록 -> 메일 확인!!
+
+
+GUI 깃 프로그램
+https://www.sourcetreeapp.com/
